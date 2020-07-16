@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="phisicalsTable"
+        messagesPack="com.traning.autodeal.web.screens.phisical">
+    <data readOnly="true">
+        <collection id="phisicalsDc"
+                    class="com.traning.autodeal.entity.client.Phisical"
+                    view="_local">
+            <loader id="phisicalsDl">
+                <query>
+                    <![CDATA[select e from autodeal_Phisical e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="phisicalsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="phisicalsTable"
+                dataLoader="phisicalsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="phisicalsTable"
+                    width="100%"
+                    dataContainer="phisicalsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="phone"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="phisicalsTable.create"/>
+                <button id="editBtn" action="phisicalsTable.edit"/>
+                <button id="removeBtn" action="phisicalsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

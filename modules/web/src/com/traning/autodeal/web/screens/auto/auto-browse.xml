@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="autosTable"
+        messagesPack="com.traning.autodeal.web.screens.auto">
+    <data readOnly="true">
+        <collection id="autosDc"
+                    class="com.traning.autodeal.entity.Auto"
+                    view="_local">
+            <loader id="autosDl">
+                <query>
+                    <![CDATA[select e from autodeal_Auto e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="autosTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="autosTable"
+                dataLoader="autosDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="autosTable"
+                    width="100%"
+                    dataContainer="autosDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="year"/>
+                <column id="price"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="autosTable.create"/>
+                <button id="editBtn" action="autosTable.edit"/>
+                <button id="removeBtn" action="autosTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

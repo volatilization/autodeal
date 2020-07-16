@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-autodeal" insertBefore="administration">
+        <item screen="autodeal_Country.browse"/>
+        <item screen="autodeal_Color.browse"/>
+        <item screen="autodeal_Manufacturer.browse"/>
+        <item screen="autodeal_Auto.browse"/>
+        <item screen="autodeal_BuyRequest.browse"/>
+        <item screen="autodeal_Complectation.browse"/>
+        <item screen="autodeal_Model.browse"/>
+        <item screen="autodeal_Client.browse"/>
+        <item screen="autodeal_Phisical.browse"/>
+        <item screen="autodeal_Legal.browse"/>
+    </menu>
+</menu-config>

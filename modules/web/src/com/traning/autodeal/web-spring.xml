@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:gui="http://schemas.haulmont.com/cuba/spring/cuba-gui.xsd">
+
+    <!-- Annotation-based beans -->
+    <context:component-scan base-package="com.traning.autodeal"/>
+
+    <gui:screens base-packages="com.traning.autodeal.web"/>
+    <bean id="autodeal_proxyCreator" class="com.haulmont.cuba.web.sys.remoting.WebRemoteProxyBeanCreator">
+        <property name="serverSelector" ref="cuba_ServerSelector"/>
+        <property name="remoteServices">
+            <map>
+                <entry key="autodeal_CountryService" value="com.traning.autodeal.service.CountryService"/>
+                <entry key="autodeal_BuyRequestService" value="com.traning.autodeal.service.BuyRequestService"/>
+                <entry key="autodeal_ModelService" value="com.traning.autodeal.service.ModelService"/>
+                <entry key="autodeal_ManufacturerService" value="com.traning.autodeal.service.ManufacturerService"/>
+                <entry key="autodeal_ClientService" value="com.traning.autodeal.service.ClientService"/>
+                <entry key="autodeal_ManagerService" value="com.traning.autodeal.service.ManagerService"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

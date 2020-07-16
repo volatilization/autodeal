@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.traning.autodeal.web.screens.complectation">
+    <data>
+        <instance id="complectationDc"
+                  class="com.traning.autodeal.entity.Complectation"
+                  view="_local">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="complectationDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+                <textField id="priceField" property="price"/>
+                <lookupField id="typeField" property="type"/>
+                <textArea id="noteField" property="note" rows="5"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

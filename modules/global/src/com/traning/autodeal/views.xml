@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="autodeal_Auto" name="auto-view" extends="_local">
+        <property name="manufacturer" view="_minimal"/>
+        <property name="model" view="_minimal"/>
+        <property name="complectation" view="_minimal"/>
+    </view>
+    <view entity="autodeal_BuyRequest" name="buyRequest-view" extends="_minimal">
+        <property name="auto" view="_minimal"/>
+        <property name="client" view="_minimal"/>
+        <property name="price"/>
+    </view>
+    <view entity="autodeal_Model" name="model-view" extends="_local">
+        <property name="manufacturer" view="_minimal"/>
+        <property name="complectation" view="_minimal"/>
+    </view>
+    <view entity="autodeal_Model" name="model-view_1" extends="_local">
+        <property name="manufacturer" view="_minimal"/>
+        <property name="complectation" view="_minimal"/>
+    </view>
+    <view entity="autodeal_Manager" name="manager-view" extends="_local">
+        <property name="country" view="_minimal"/>
+    </view>
+</views>

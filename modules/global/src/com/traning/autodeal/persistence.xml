@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="autodeal" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.traning.autodeal.entity.Country</class>
+        <class>com.traning.autodeal.entity.Manufacturer</class>
+        <class>com.traning.autodeal.entity.Color</class>
+        <class>com.traning.autodeal.entity.Model</class>
+        <class>com.traning.autodeal.entity.Complectation</class>
+        <class>com.traning.autodeal.entity.Auto</class>
+        <class>com.traning.autodeal.entity.Client</class>
+        <class>com.traning.autodeal.entity.client.Phisical</class>
+        <class>com.traning.autodeal.entity.client.Legal</class>
+        <class>com.traning.autodeal.entity.BuyRequest</class>
+        <class>com.traning.autodeal.entity.Manager</class>
+    </persistence-unit>
+</persistence>
